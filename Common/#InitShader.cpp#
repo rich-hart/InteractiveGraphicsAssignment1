@@ -84,7 +84,6 @@ InitShader(const char* vShaderFile, const char* fShaderFile)
 	glGetProgramInfoLog( program, logSize, NULL, logMsg );
 	std::cerr << logMsg << std::endl;
 	delete [] logMsg;
-
 	exit( EXIT_FAILURE );
     }
 

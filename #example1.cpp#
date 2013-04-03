@@ -6,6 +6,7 @@
 #include "include/vec.h"
 #include "include/mat.h"
 #include <iostream>
+
 using namespace std;
 
 const int NumPoints = 5000;

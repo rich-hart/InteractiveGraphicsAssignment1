@@ -3,8 +3,6 @@
 
 #include "include/Angel.h"
 #include "include/CheckError.h"
-#include "include/vec.h"
-#include "include/mat.h"
 #include <iostream>
 using namespace std;
 
