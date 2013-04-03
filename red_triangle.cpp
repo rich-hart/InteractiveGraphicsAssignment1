@@ -6,14 +6,21 @@
 const int NumPoints = 3;
 
 //--------------------------------------------------------------------------
+void triangle(void){
 
-void
-init( void )
+
+}
+
+
+void init( void )
 {
     // Specifiy the vertices for a triangle
-    vec2 vertices[3] = {
+
+    vec2 triangle_vertices[3] = {
         vec2( -0.75, -0.75 ), vec2( 0.0, 0.75 ), vec2( 0.75, -0.75 )
     };
+	
+
 
     // Create a vertex array object
     GLuint vao[1];
@@ -25,7 +32,7 @@ init( void )
     GLuint buffer;
     glGenBuffers( 1, &buffer );
     glBindBuffer( GL_ARRAY_BUFFER, buffer );
-    glBufferData( GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW );
+    glBufferData( GL_ARRAY_BUFFER, sizeof(triangle_vertices), triangle_vertices, GL_STATIC_DRAW );
 
     // Load shaders and use the resulting shader program
     GLuint program = InitShader( "vshader21.glsl", "fshader21.glsl" );
@@ -42,8 +49,7 @@ init( void )
 
 //----------------------------------------------------------------------------
 
-void
-display( void )
+void display( void )
 {
     glClear( GL_COLOR_BUFFER_BIT );     // clear the window
     glDrawArrays( GL_TRIANGLES, 0, NumPoints );    // draw the points
@@ -52,8 +58,7 @@ display( void )
 
 //----------------------------------------------------------------------------
 
-void
-keyboard( unsigned char key, int x, int y )
+void keyboard( unsigned char key, int x, int y )
 {
     switch ( key ) {
     case 033:
@@ -72,7 +77,7 @@ main( int argc, char **argv )
     glutInitWindowSize( 512, 512 );
 
     glutCreateWindow( "Red Triangle" );
-
+    
     init();
 
     glutDisplayFunc( display );
