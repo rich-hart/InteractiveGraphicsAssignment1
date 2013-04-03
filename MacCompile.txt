@@ -1,0 +1,56 @@
+With the release of Lion, Apple supports OpenGL 3.2. See notes below.
+
+The code under MAC_VERSION for each chapter under CODE is compatible with Snow Leopard and Leopard.
+
+USING THE EXAMPLES WITH LEOPARD or SNOW LEOPARD
+
+With Leopard and Snow Leopard, you should be able to use OpenGL extensions supported by Apple to create frame buffer objects and support pretty much everything that we need for the book. You can get a list of the extensions by running glxinfo from a terminal window. You shouldn't have to worry about installing GLEW or freeglut.
+
+The two key extensions are glGenVertexArraysAPPLE and glBindVertexArraysAPPLE which replace glGenVertexArrays and glBindVertexArrays
+
+The version of GLSL supported under Snow Leopard is one I used for the Mac code on this website. The main difference you will encounter compared to the code in the text is that you will need to use varying variables instead of in and out to pass values from a vertex shader to a fragment shader. For example, if you use a variable color in the vertex shader and want to pass it on to the fragment shader, the book would have something like:
+
+out vec4 color;
+
+in the vertex shader and
+
+in vec4 color; 
+
+in the fragment shader. On the Mac you would replace in and out by the varying qualifer in both shaders, as in
+
+varying vec4 color;
+
+Building simple applications under OSX is similar to building them
+under linux with the following changes:
+
+The glut.h file is stored under a GLUT directory so the include
+statement in your application should be
+
+#include <GLUT/glut.h>
+
+Thus a very simple compile would be
+
+g++ Initshaders.cpp example.cpp -framework OpenGL -framework GLUT -o example
+
+assuming the include files are all in the same directory (otherwise add the -I flag and path).
+
+Make sure that the frameworks have been installed.
+
+All these changes should only take a few minutes for any book example.
+
+If you use the Xcode interface, just add the two frameworks from the 
+exadd menu.
+
+See Kuehne and Sullivan, OpenGL Programming on the Mac, Addison-Wesley, for
+information about using the various versions of OpenGL available on the Mac
+and on using other window interfaces.
+
+USING THE EXAMPLES UNDER LION:
+
+If you have not upgraded to Xcode 4.1 on Lion, you probably have to add the -isysroot /Developer/SDKs/MacOSX10.6.sdk flag to your makefile to use Xcode 3.
+
+Lion provides a 3.2 core profile. However, you can not use it with the GLUT framework, so you will have to use a native Mac interface. Note you will have to include gl.3 instead of gl.h. If you do use 3.2, the changes to the Mac versions of the sample code are simple.
+
+You do not have use the APPLE extensions for the Vertex Array functions. 
+
+You can also use the shaders under the Windows versions which use GLSL 1.5.
