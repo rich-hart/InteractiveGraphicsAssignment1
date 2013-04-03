@@ -4,16 +4,16 @@ GL_OPTIONS=-framework OpenGL -framework GLUT
 OPTIONS=$(GCC_OPTIONS) $(GL_OPTIONS)
 
 
-all: example
+all: red_triangle
 
-example: example1.o initShader.o
-	$(CC) example1.o initShader.o $(OPTIONS) -o example
+red_triangle: red_traingle.o initShader.o
+	$(CC) red_triangle.o initShader.o $(OPTIONS) -o red_triangle
 
-example.o: example1.cpp
-	$(CC) -c example1.cpp
+red_triangle.o: red_triangle.cpp
+	$(CC) -c red_triangle.cpp
 
 initShader.o: Common/initShader.cpp
 	$(CC) -c Common/initShader.cpp
 
 clean:
-	rm -rf *.o 
+	rm -rf *.o red_triangle
