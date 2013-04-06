@@ -8,10 +8,6 @@ const int NumPoints = 3;
 //--------------------------------------------------------------------------
 void triangle(void){
 
-    vec2 vertices[3] = {
-        vec2( -0.75, -0.75 ), vec2( 0.0, 0.75 ), vec2( 0.75, -0.75 )
-    };
-
 
 }
 
@@ -19,6 +15,12 @@ void triangle(void){
 void init( void )
 {
     // Specifiy the vertices for a triangle
+
+    vec2 triangle_vertices[3] = {
+        vec2( -0.75, -0.75 ), vec2( 0.0, 0.75 ), vec2( 0.75, -0.75 )
+    };
+	
+
 
     // Create a vertex array object
     GLuint vao[1];
@@ -30,7 +32,7 @@ void init( void )
     GLuint buffer;
     glGenBuffers( 1, &buffer );
     glBindBuffer( GL_ARRAY_BUFFER, buffer );
-    glBufferData( GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW );
+    glBufferData( GL_ARRAY_BUFFER, sizeof(triangle_vertices), triangle_vertices, GL_STATIC_DRAW );
 
     // Load shaders and use the resulting shader program
     GLuint program = InitShader( "vshader21.glsl", "fshader21.glsl" );
@@ -71,12 +73,15 @@ int
 main( int argc, char **argv )
 {
     glutInit( &argc, argv );
-    glutInitDisplayMode( GLUT_RGBA );
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_RGBA );
     glutInitWindowSize( 512, 512 );
+    glutInitWindowPosition(100, 100);
 
     glutCreateWindow( "Red Triangle" );
-    triangle();
-    init();
+    
+    glutDisplayFunc(RenderSceneCB);
+   
+    //init();
 
     glutDisplayFunc( display );
     glutKeyboardFunc( keyboard );

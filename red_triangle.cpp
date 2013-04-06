@@ -6,10 +6,7 @@
 const int NumPoints = 3;
 
 //--------------------------------------------------------------------------
-void triangle(void){
 
-
-}
 
 
 void init( void )
@@ -44,7 +41,7 @@ void init( void )
     glVertexAttribPointer( loc, 2, GL_FLOAT, GL_FALSE, 0,
                            BUFFER_OFFSET(0) );
 
-    glClearColor( 1.0, 1.0, 1.0, 1.0 ); // white background
+    glClearColor( 0.0, 0.0, 0.0, 0.0 ); // white background
 }
 
 //----------------------------------------------------------------------------
@@ -73,16 +70,20 @@ int
 main( int argc, char **argv )
 {
     glutInit( &argc, argv );
-    glutInitDisplayMode( GLUT_RGBA );
+    glutInitDisplayMode( GLUT_DOUBLE | GLUT_RGBA );
     glutInitWindowSize( 512, 512 );
+    glutInitWindowPosition(100, 100);
 
     glutCreateWindow( "Red Triangle" );
     
+   
     init();
-
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glutDisplayFunc( display );
     glutKeyboardFunc( keyboard );
 
     glutMainLoop();
+    glClear(GL_COLOR_BUFFER_BIT);
+    glutSwapBuffers();
     return 0;
 }
