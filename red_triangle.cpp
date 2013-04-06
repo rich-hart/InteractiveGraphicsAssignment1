@@ -1,39 +1,31 @@
-// First new GL program
-// Just makes a red triangle
+// Display a color cube
+//
+// Colors are assigned to each vertex and then the rasterizer interpolates
+//   those colors across the triangles.  We us an orthographic projection
+//   as the default projetion.
 
 #include "include/Angel.h"
 
-typedef Angel::vec4  color4;
-typedef Angel::vec4  point4;
+typedef Angel::vec2  color2;
+typedef Angel::vec2  point2;
 
-const int NumVertices = 36; //(6 faces)(2 triangles/face)(3 vertices/triangle)
+const int NumVertices = 6; //(6 faces)(2 triangles/face)(3 vertices/triangle)
 
-point4 points[NumVertices];
-color4 colors[NumVertices];
+point2 points[NumVertices];
+color2 colors[NumVertices];
 
 // Vertices of a unit cube centered at origin, sides aligned with axes
-point4 vertices[8] = {
-    point4( -0.5, -0.5,  0.5, 1.0 ),
-    point4( -0.5,  0.5,  0.5, 1.0 ),
-    point4(  0.5,  0.5,  0.5, 1.0 ),
-    point4(  0.5, -0.5,  0.5, 1.0 ),
-    point4( -0.5, -0.5, -0.5, 1.0 ),
-    point4( -0.5,  0.5, -0.5, 1.0 ),
-    point4(  0.5,  0.5, -0.5, 1.0 ),
-    point4(  0.5, -0.5, -0.5, 1.0 )
+point2 vertices[2] = {
+    point2(  -0.5,  0.5 ),
+    point2( 0.5,  0.5 ),
+
 };
 
 // RGBA olors
-color4 vertex_colors[8] = {
-    color4( 0.0, 0.0, 0.0, 1.0 ),  // black
-    color4( 1.0, 0.0, 0.0, 1.0 ),  // red
-    color4( 1.0, 1.0, 0.0, 1.0 ),  // yellow
-    color4( 0.0, 1.0, 0.0, 1.0 ),  // green
-    color4( 0.0, 0.0, 1.0, 1.0 ),  // blue
-    color4( 1.0, 0.0, 1.0, 1.0 ),  // magenta
-    color4( 1.0, 1.0, 1.0, 1.0 ),  // white
-    color4( 0.0, 1.0, 1.0, 1.0 )   // cyan
-};
+color2 vertex_colors[2] = {
+    color2( 0.0, 0.0, 0.0, 1.0 ),  // black
+    color2( 1.0, 0.0, 0.0, 1.0 ),  // red
+   };
 
 //----------------------------------------------------------------------------
 
@@ -59,10 +51,7 @@ colorcube()
 {
     quad( 1, 0, 3, 2 );
     quad( 2, 3, 7, 6 );
-    quad( 3, 0, 4, 7 );
-    quad( 6, 5, 1, 2 );
-    quad( 4, 5, 6, 7 );
-    quad( 5, 4, 0, 1 );
+ 
 }
 
 //----------------------------------------------------------------------------
