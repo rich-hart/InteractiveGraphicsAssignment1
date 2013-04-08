@@ -776,15 +776,12 @@ inline
 void printv(const vec4& a )
 {
     Error( "replace with vector insertion operator" );
-    printf("%f %f %f %f \n\n", a[0], a[1], a[2], a[3]);
 }
 
 inline
 void printm(const mat4 a)
 {
     Error( "replace with matrix insertion operator" );
-    for(int i=0; i<4; i++) printf("%f %f %f %f \n", a[i][0], a[i][1], a[i][2], a[i][3]);
-    printf("\n");
 }
 
 inline

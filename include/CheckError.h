@@ -8,7 +8,7 @@
 #define __CHECKERROR_H__
 
 #include <stdio.h>
-#include <OpenGL/gl.h>
+#include <GL/gl.h>
 
 //----------------------------------------------------------------------------
 
