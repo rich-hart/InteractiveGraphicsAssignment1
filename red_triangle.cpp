@@ -1,7 +1,7 @@
 // First new GL program
 // Just makes a red triangle
 
-#include "Angel.h"
+#include "include/Angel.h"
 
 const int NumPoints = 3;
 
