@@ -16,8 +16,8 @@ init( void )
     };
 
     // Create a vertex array object
-    GLuint vao[1];
-    glGenVertexArrays( 1, vao );
+    GLuint vao[2];
+    glGenVertexArrays( 2, vao );
     glBindVertexArray( vao[0] );
     
 
