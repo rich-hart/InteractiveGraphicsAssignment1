@@ -2,19 +2,27 @@
 // Just makes a red triangle
 
 #include "include/Angel.h"
-
-const int NumPoints = 9;
-
+#include <math.h>
+const int NumPoints = 15;
+#define PI 3.14159265
 //--------------------------------------------------------------------------
+const float x_offest=.5;
+const float y_offest=.5;
 
 void
 init( void )
 {
     // Specifiy the vertices for a triangle
-    vec2 vertices[9] = {
-        vec2( 0.0, 0.0 ), vec2( -1.0, 0.0 ), vec2( 0.0, -1.0 ),
-	vec2(0.0,0.0),vec2(1.0,0.0),vec2(0.0,1.0),
-	vec2(1.0,0.0),vec2(1.0,1.0),vec2(0.0,1.0)
+    vec2 vertices[NumPoints] = {
+       // vec2( 0.0, 0.0 ), vec2( -1.0, 0.0 ), vec2( 0.0, -1.0 ),
+	//vec2(0.0,0.0),vec2(1.0,0.0),vec2(0.0,1.0),
+	//vec2(1.0,0.0),vec2(1.0,1.0),vec2(0.0,1.0)
+
+	vec2(0.0+x_offest,0.0+y_offest),vec2(0.0+x_offest,1.0+y_offest),vec2(-sin(2*PI/5)+x_offest,cos(2*PI/5)+y_offest),
+vec2(0.0+x_offest,0.0+y_offest),vec2(-sin(2*PI/5)+x_offest,cos(2*PI/5)+y_offest),vec2(-sin(4*PI/5)+x_offest,-cos(PI/5)+y_offest),
+vec2(0.0+x_offest,0.0+y_offest),vec2(-sin(4*PI/5)+x_offest,-cos(PI/5)+y_offest),vec2(sin(4*PI/5)+x_offest,-cos(PI/5)+y_offest),
+vec2(0.0+x_offest,0.0+y_offest),vec2(sin(4*PI/5)+x_offest,-cos(PI/5)+y_offest),vec2(sin(2*PI/5)+x_offest,cos(2*PI/5)+y_offest),
+vec2(0.0+x_offest,0.0+y_offest),vec2(0.0+x_offest,1.0+y_offest),vec2(sin(2*PI/5)+x_offest,cos(2*PI/5)+y_offest)
     };
 
     // Create a vertex array object
