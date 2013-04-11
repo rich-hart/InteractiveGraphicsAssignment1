@@ -11,7 +11,7 @@ void
 init( void )
 {
     // Specifiy the vertices for a triangle
-    vec2 vertices[] = {
+    vec2 vertices[3] = {
         vec2( -0.75, -0.75 ), vec2( 0.0, 0.75 ), vec2( 0.75, -0.75 )
     };
 
