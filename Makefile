@@ -9,7 +9,7 @@ OPTIONS=$(GCC_OPTIONS) $(GL_OPTIONS)
 
 <<<<<<< HEAD
 all: 
-	g++ assignment1.cpp Common/InitShader.o -lGLEW -lGL -lglut -o assignment1
+	g++ assignment2.cpp Common/InitShader.o -lGLEW -lGL -lglut -o assignment2
 
 =======
 all: red_triangle 

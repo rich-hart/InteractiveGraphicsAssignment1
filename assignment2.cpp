@@ -97,7 +97,7 @@ main( int argc, char **argv )
     glutInitDisplayMode( GLUT_RGBA );
     glutInitWindowSize( 512, 512 );
 
-    glutCreateWindow( "Assignment 1" );
+    glutCreateWindow( "Assignment 2" );
     glewExperimental=GL_TRUE; 
     glewInit();    
     init();
