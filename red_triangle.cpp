@@ -2,6 +2,7 @@
 // Just makes a red triangle
 
 #include "include/Angel.h"
+<<<<<<< HEAD
 #include <math.h>
 
 const int NumPoints = 3+6+15;
@@ -12,10 +13,18 @@ const int NumPoints = 3+6+15;
 const float x_offest=1.0;
 const float y_offest=-1.0;
 const float scale=.51;
+=======
+
+const int NumPoints = 3;
+
+//--------------------------------------------------------------------------
+
+>>>>>>> f5aefe07c1bb48b18ff58a7f602b072e08c8ed95
 void
 init( void )
 {
     // Specifiy the vertices for a triangle
+<<<<<<< HEAD
     vec2 vertices[NumPoints] = {
 
         vec2( 0.0, 0.0 ), vec2( -1.0, 0.0 ), vec2( 0.0, -1.0 ),
@@ -39,6 +48,10 @@ vec2(scale*(0.0+x_offest),scale*(0.0+y_offest)),vec2(scale*(sin(4*PI/5)+x_offest
 
 
 vec2(scale*(0.0+x_offest),scale*(0.0+y_offest)),vec2(scale*(0.0+x_offest),scale*(1.0+y_offest)),vec2(scale*(sin(2*PI/5)+x_offest),scale*(cos(2*PI/5)+y_offest))
+=======
+    vec2 vertices[3] = {
+        vec2( -0.75, -0.75 ), vec2( 0.0, 0.75 ), vec2( 0.75, -0.75 )
+>>>>>>> f5aefe07c1bb48b18ff58a7f602b072e08c8ed95
     };
 
     // Create a vertex array object

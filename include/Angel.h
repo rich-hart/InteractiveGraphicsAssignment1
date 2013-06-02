@@ -31,9 +31,15 @@
 //     this this "include" directory.
 //
 
+<<<<<<< HEAD
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GL/glut.h>
+=======
+
+#  include <GL/gl.h>
+#  include <GL/glut.h>
+>>>>>>> f5aefe07c1bb48b18ff58a7f602b072e08c8ed95
 
 // Define a helpful macro for handling offsets into buffer objects
 #define BUFFER_OFFSET( offset )   ((GLvoid*) (offset))
